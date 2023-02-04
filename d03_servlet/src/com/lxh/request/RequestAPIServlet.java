@@ -20,5 +20,6 @@ public class RequestAPIServlet extends HttpServlet {
         System.out.println("请求头User-Agent ==>>> " + req.getHeader("User-Agent"));
         // 获取请求方式
         System.out.println("请求方式 ==>>> " + req.getMethod()); // GET
+        System.out.println("test push");
     }
 }
