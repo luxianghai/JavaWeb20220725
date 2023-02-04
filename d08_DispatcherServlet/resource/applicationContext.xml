@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans>
+
+    <bean id="userDao" class="com.lxh.dao.impl.UserDaoImpl"/>
+    <!--
+        bean中配置有property标签，则说明该bean会依赖于其他的bean对象
+        该配置表示：UserServiceImpl依赖于一个id为userDao的对象，且该对象在UserServiceImpl中的变量名为userDao
+    -->
+    <bean id="userService" class="com.lxh.service.impl.UserServiceImpl">
+        <!--
+            name标签用于指定变量名 ref用于指定用来的bean的id
+        -->
+        <property name="userDao" ref="userDao" />
+    </bean>
+
+    <bean id="user" class="com.lxh.controller.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+
+
+    <bean id="studentDao" class="com.lxh.dao.impl.StudentDaoImpl"/>
+    <bean id="studentService" class="com.lxh.service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao" />
+    </bean>
+    <bean id="student" class="com.lxh.controller.StudentController">
+        <property name="studentService" ref="studentService"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    <?xml version="1.0" encoding="UTF-8" ?>
+    以上内容就是xml文件的声明
+    version: 表示xml的版本
+    encoding：表示xml文件的编码
+-->
+<books><!-- 使用books标签来包裹多个图书信息 -->
+    <book sn="SN1234132"> <!-- 一个book标签表示一本图书 sn属性表示图书序列号 -->
+        <name>活着</name> <!-- name标签表示书名 -->
+        <author>余华</author> <!-- author标签表示作者 -->
+        <price>19.9</price> <!-- price标签表示价格 -->
+    </book>
+<!--    <book sn="SN4313213" name="百年孤独" author="未知" price="29.9"></book>-->
+    <book sn="SN424324">
+        <name>傲慢与偏见</name>
+        <author>未知</author>
+        <price>29.9</price>
+    </book>
+</books>

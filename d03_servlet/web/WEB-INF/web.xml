@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!-- context-param用于设置全局参数 -->
+    <context-param>
+        <param-name>author</param-name>
+        <param-value>luxianghai</param-value>
+    </context-param>
+
+    <!--  servlet标签用于给Tomcat配置一个Servlet程序  -->
+    <servlet>
+        <!-- servlet-name标签用于给Servlet其一个别名，一般是类名 -->
+        <servlet-name>HelloServlet</servlet-name>
+        <!-- servlet-class用于指定Servlet程序的全类名 -->
+        <servlet-class>com.lxh.servlet.HelloServlet</servlet-class>
+        <!--
+            init-param 标签用于指定一个Servlet程序的默认参数,可以有多个，也可以没有
+            参数形式为键值对形式
+            子标签param-name用于指定键
+            子标签param-value用于指定值
+        -->
+        <init-param>
+            <!--
+                param-name标签
+            -->
+            <param-name>username</param-name>
+            <param-value>luxianghai</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+    </servlet>
+    <!-- servlet-mapping标签用于给Servlet程序配置访问路径，一个servlet标签对应一个servlet-mapping标签 -->
+    <servlet-mapping>
+        <!-- servlet-name标签用于指定给哪个Servlet程序配置 -->
+        <servlet-name>HelloServlet</servlet-name>
+        <!--
+            url-pattern标签用于配置访问路径，可以配置多个访问路径，且必须以"/"开头
+            "/" 在服务器解析的时候，表示地址为 http://ip:prot/工程路径/
+            "/hello" 表示地址为 http://ip:port/工程路径/hello
+        -->
+        <url-pattern>/hello</url-pattern>
+        <url-pattern>/first</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HelloServlet2</servlet-name>
+        <servlet-class>com.lxh.servlet.HelloServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+
+</web-app>
