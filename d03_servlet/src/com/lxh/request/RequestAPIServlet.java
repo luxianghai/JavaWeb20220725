@@ -21,5 +21,6 @@ public class RequestAPIServlet extends HttpServlet {
         // 获取请求方式
         System.out.println("请求方式 ==>>> " + req.getMethod()); // GET
         System.out.println("test push");
+        System.out.println("test pull");
     }
 }
